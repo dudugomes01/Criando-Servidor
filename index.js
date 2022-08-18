@@ -9,15 +9,18 @@ app.set('view engine', 'ejs')
 //app.use(express.static(path.join(__dirname, 'views'))) Mais facil
 
 //definindo os arquivos publicos
-app.use(express.static(path.join(__dirname, 'public')))
+//app.use(express.static(path.join(__dirname, 'public')))
+const publicFolder = path.join(__dirname, 'public')
+const expressPublic = express.static(publicFolder)
+app.use(expressPublic)
 
 //Rotas
 app.get('/',(req, res) =>{
     res.render('index')
 })
 
-app.get('/sobre',(req, res) => {
-    res.send('Sobre')
+app.get('/posts',(req, res) => {
+    res.render('post')
 })
 //404 error (not found)
 app.use((req, res) => {
