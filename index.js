@@ -19,8 +19,11 @@ app.get('/',(req, res) =>{
     res.render('index')
 })
 
-app.get('/posts',(req, res) => {
-    res.render('post')
+app.get('/quem',(req, res) => {
+    res.render('quemSomos')
+})
+app.get('/produtos',(req, res) => {
+    res.render('produtos')
 })
 //404 error (not found)
 app.use((req, res) => {
