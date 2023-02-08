@@ -16,14 +16,20 @@ app.use(expressPublic)
 
 //Rotas
 app.get('/',(req, res) =>{
-    res.render('index')
+    res.render('index',{
+        title: 'Coffee Love - Home'
+    })
 })
 
 app.get('/quem',(req, res) => {
-    res.render('quemSomos')
+    res.render('quemSomos',{
+        title: 'Coffee Love - About'
+    })
 })
 app.get('/produtos',(req, res) => {
-    res.render('produtos')
+    res.render('produtos',{
+        title: 'Coffee Love - Produtos'
+    })
 })
 //404 error (not found)
 app.use((req, res) => {
